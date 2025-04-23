@@ -50,7 +50,7 @@ def test_guest_can_add_product_to_basket(browser):
 def test_guest_cant_see_success_message_after_adding_product_to_basket(browser):
     page = ProductPage(browser, link)
     page.open()
-    page.click_on_add_to_basket_button()
+    page.add_item_to_basket()
     page.should_not_be_success_message()
 
 @pytest.mark.skip
