@@ -17,7 +17,9 @@ class ProductPage(BasePage):
         assert self.is_not_element_present(*ProductPageLocators.MESSAGE_ITEM_NAME), "Success message is presented, but should not be"
 
     def should_be_item_successfully_added_message(self, item):
-        assert item in self.browser.find_element(*ProductPageLocators.MESSAGE_ITEM_NAME).text, "Item name is not equal expected"
+        expected_result = self.browser.find_element(*ProductPageLocators.MESSAGE_ITEM_NAME).text
+        assert item in expected_result, f"Item name is not equal expected, expected {item}, but found {expected_result}"
 
     def should_be_basket_price(self, price):
-        assert price in self.browser.find_element(*ProductPageLocators.MESSAGE_ITEM_NAME).text, "Item name is not equal expected"
+        expected_result = self.browser.find_element(*ProductPageLocators.MESSAGE_ITEM_PRICE).text
+        assert price in expected_result, f"Item price is not equal expected, expected {price}, but found {expected_result}"

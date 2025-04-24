@@ -19,7 +19,8 @@ class ProductPageLocators:
     ITEM_PRICE = (By.XPATH, "//article[@class='product_page']//p[@class='price_color']")
     ITEM_NAME = (By.XPATH, "//article[@class='product_page']//h1")
     ADD_ITEM_BUTTON = (By.XPATH, "//form[@id='add_to_basket_form']/button[@type='submit']")
-    MESSAGE_ITEM_NAME = (By.CSS_SELECTOR, "#messages")
+    MESSAGE_ITEM_NAME = (By.XPATH, "//div[@id='messages']//strong")
+    MESSAGE_ITEM_PRICE = (By.XPATH, "//div[@id='messages']//p/strong")
 
 class BasketPageLocators:
     EMPTY_MESSAGE = (By.CSS_SELECTOR, "#content_inner > p")
